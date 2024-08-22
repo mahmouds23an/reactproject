@@ -1,0 +1,138 @@
+.App {
+  text-align: center;
+  background-color: #121212;
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.todo-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.todo-input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  width: 300px;
+}
+
+.todo-button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #6200ea;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.todo-list {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  background-color: #1e1e1e;
+  padding: 15px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.completed {
+  text-decoration: line-through;
+  color: #888888;
+}
+
+.complete-btn,
+.edit-btn,
+.delete-btn,
+.save-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ffffff;
+  margin-left: 10px;
+  font-size: 20px;
+  transition: 0.5s;
+}
+
+.complete:hover {
+  color: green;
+}
+
+.edit-btn:hover {
+  color: blue;
+}
+
+.delete-btn:hover {
+  color: red;
+}
+
+.undo:hover {
+  color: blueviolet;
+}
+
+.edit-form {
+  display: flex;
+}
+
+.edit-input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  width: 200px;
+}
+
+.todo-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.subtasks {
+  margin-left: 20px;
+  padding-top: 10px;
+}
+
+.subtask-item {
+  display: flex;
+  justify-content: space-between;
+  background-color: #2c2c2c;
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 5px;
+}
+
+.subtask-input {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 10px;
+  width: 200px;
+}
+
+.subtask-button {
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+  background-color: #6200ea;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.subtask-item {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.subtask-item span.completed {
+  text-decoration: line-through;
+  color: #888888;
+}
