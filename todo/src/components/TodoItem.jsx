@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useDrag } from "react-dnd";
 import { IoMdCloudDone } from "react-icons/io";
 import { FaUndo, FaEdit, FaTrash } from "react-icons/fa";
 
@@ -36,8 +37,20 @@ const TodoItem = ({
     }
   };
 
+  const [{ isDragging }, drag] = useDrag(() => ({
+    type: "TODO_ITEM",
+    item: { index },
+    collect: (monitor) => ({
+      isDragging: monitor.isDragging(),
+    }),
+  }));
+
   return (
-    <div className={`todo-item ${task.completed ? "completed" : ""}`}>
+    <div
+      ref={drag}
+      className={`todo-item ${task.completed ? "completed" : ""}`}
+      style={{ opacity: isDragging ? 0.5 : 1 }}
+    >
       {isEditing ? (
         <form onSubmit={handleEditSubmit} className="edit-form">
           <input

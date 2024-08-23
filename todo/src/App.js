@@ -1,8 +1,10 @@
-import "./App.css";
 import React, { useState } from "react";
+import { DndProvider } from "react-dnd";
+import { HTML5Backend } from "react-dnd-html5-backend";
 import TodoForm from "./components/TodoForm";
 import TodoList from "./view/TodoList";
 import useTodoController from "./controller/TodoController";
+import "./App.css";
 
 const App = () => {
   const {
@@ -18,20 +20,22 @@ const App = () => {
   const [editTaskText, setEditTaskText] = useState("");
 
   return (
-    <div className="App">
-      <TodoForm addTask={addTask} />
-      <TodoList
-        tasks={tasks}
-        editTaskIndex={editTaskIndex}
-        editTaskText={editTaskText}
-        setEditTaskIndex={setEditTaskIndex}
-        setEditTaskText={setEditTaskText}
-        updateTask={updateTask}
-        toggleTaskCompletion={toggleTaskCompletion}
-        addSubtask={addSubtask}
-        deleteTask={deleteTask}
-      />
-    </div>
+    <DndProvider backend={HTML5Backend}>
+      <div className="App">
+        <TodoForm addTask={addTask} />
+        <TodoList
+          tasks={tasks}
+          editTaskIndex={editTaskIndex}
+          editTaskText={editTaskText}
+          setEditTaskIndex={setEditTaskIndex}
+          setEditTaskText={setEditTaskText}
+          updateTask={updateTask}
+          toggleTaskCompletion={toggleTaskCompletion}
+          addSubtask={addSubtask}
+          deleteTask={deleteTask}
+        />
+      </div>
+    </DndProvider>
   );
 };
 
